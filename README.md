@@ -9,3 +9,5 @@ $ podman run --rm -it quay.io/bostrt/trap-signals
 ```
 
 To kill container, use `podman kill <container>`.
+
+If you are using K8s/OpenShift try: `kubectl create -f deployment.yaml`

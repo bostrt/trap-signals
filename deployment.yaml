@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trap-signals
+spec:
+  selector:
+    matchLabels:
+      app: trap-signals
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: trap-signals
+    spec:
+      containers:
+      - name: trap-signals
+        image: quay.io/bostrt/trap-signals:latest
+      terminationGracePeriodSeconds: 30  # Adjust as needed to reproduce slow shutdown or pod termination problems.
