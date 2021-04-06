@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: DaemonSet
 metadata:
   name: trap-signals
 spec:
@@ -15,4 +15,5 @@ spec:
       containers:
       - name: trap-signals
         image: quay.io/bostrt/trap-signals:latest
-      terminationGracePeriodSeconds: 30  # Adjust as needed to reproduce slow shutdown or pod termination problems.
+      terminationGracePeriodSeconds: 1200  # Adjust as needed to reproduce slow shutdown or pod termination problems.
+
