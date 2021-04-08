@@ -1,0 +1,9 @@
+    apiVersion: v1
+    kind: Pod
+    metadata:
+      name: trap-signals
+    spec:
+      containers:
+      - name: mycontainer
+        image: quay.io/bostrt/trap-signals:latest
+      terminationGracePeriodSeconds: 1200  # Adjust as needed to reproduce slow shutdown or pod termination problems.
